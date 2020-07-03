@@ -1,0 +1,41 @@
+body {
+  background-color: #ffccff;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.header {
+  background-color: grey;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.fotoleft {
+    float: left;
+    height: 150%;
+ }
+
+.fotoright {
+    float: right;
+    height: 150%;
+ }
+
+.textleft {
+   	height: 500px;
+    width: 50%; 
+    float: left;  
+}
+
+.textright {
+	height: 500px;
+    width: 50%;
+    float: right;
+}
+
+.clearfix {
+  overflow: auto;
+}
