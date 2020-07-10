@@ -1,0 +1,35 @@
+.header {
+	height: 170 px;
+	text-align: center;
+	padding: 7px;
+	border-color: rgb(0,0,0);
+	border-width:1;
+	border-style: solid;
+}
+
+.holy {
+	width: 100%;
+	height: 80%;
+	border-width:1;
+    border-color: rgb(0,0,0);
+    border-style: solid;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.holyg  {
+	height: 800 px;
+	padding: 15px;
+	text-align: center;
+	border-width:1;
+    border-color: rgb(190,190,190);
+    border-style: solid;
+}
+
+.text {
+	border: 1px solid black;
+	padding: 15px;
+	height: 700 px;
+}
