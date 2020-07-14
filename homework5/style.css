@@ -1,0 +1,102 @@
+.menu {
+    overflow: hidden;
+    position: fixed;
+    top:0;
+	left:0;
+	right:0; 
+	background-color: white;
+	z-index: 99;
+   }
+.header {
+	display: flex;
+	align-items: stretch;
+	float:center;
+	margin-top: 25px;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img{
+	margin-top: 10px;
+	background-image: url('img/hero.jpg');
+	background-position: center;
+    background-size: 100% 100%;
+ }
+ .img2{
+ 	background-color: linear-gradient(290deg, #ffde58, #f4590b);
+ }
+ .button {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+}
+.text {
+	font-family:'Montserrat';
+	color: rgba(0,0,0,0.5);
+	font-size: 12px;
+	text-align: left;
+	margin: 2px;
+	padding: 2px;
+}
+.text-center {
+	height: 100%;
+	font-size: 60px;
+    line-height: 88px;
+}
+.text-h3{
+	font-size: 35px;
+	text-align: center;
+	margin: 25px 0px 16px;
+	color: black;
+}
+.text-h3-left{
+	font-size: 35px;
+	text-align: left;
+	margin: 25px 0px 16px;
+	color: white;
+}
+.text-p{
+	font-size: 19px;
+	text-align: center;
+	color: black;
+	margin: 25px 0px 16px;
+}
+.text-p-left{
+	font-size: 19px;
+	text-align: left;
+	margin: 25px 0px 16px;
+	color: white;
+}
+.centeblock{
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 200px;
+  margin-top: 200px;
+  margin-left: 175px;
+  border: 3px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  border: 20px;
+  padding: 10px;
+}
+.img2{
+	max-width: 100%;
+    height: auto;
+}
+.divcente{
+	float: center;
+	background:#f2f2f2; 
+	border: 50px;
+	height: 400px;
+	width: auto;
+}
