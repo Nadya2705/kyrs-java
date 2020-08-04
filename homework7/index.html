@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Sort</title>
+</head>
+<body>
+	<h2>Перевірка успішноті студентів з різних груп:</h2>
+    <h3>Хороші студенти: 89-100</h3>
+    <h3>Середні студенти: 65-88</h3>
+    <h3>Слабкі студенти: 0-64</h3>
+    <br>
+<script>
+	var GroupMTM11 = [45, 78, 87,90, 100, 51];
+	var GroupMTM12 = [67, 74, 12, 68, 93, 36];
+	var GroupMTM13 = [89, 44, 55, 66, 88, 99];
+			document.write(GroupMTM11)
+			document.write(GroupMTM12)
+			document.write(GroupMTM13)
+
+	var goodPoint = 89;
+	var normPoints = [65, 88];
+
+	initStudentCount(GroupMTM11, GroupMTM12, GroupMTM13);
+
+function initStudentCount(){
+	    
+		var allStudents = GroupMTM11.concat(GroupMTM12, GroupMTM13);
+	    var sortedStudents = findStudentsMark(allStudents);
+	    displayStudentsMark(sortedStudents);
+}
+
+function findStudentsMark(students){
+			var goodStudents=[], normStudents = [], badStudents= [];
+			for(let studentMark of students){
+		        if(studentMark >= goodPoint){
+		            sortStudents(studentMark, goodStudents)  
+		        }else if(studentMark >= normPoints[0] && studentMark <= normPoints[1]){
+		            sortStudents(studentMark, normStudents) 
+		        }else{
+		            sortStudents(studentMark, badStudents)  
+		        }
+		    }
+		    return [].concat([goodStudents], [normStudents], [badStudents]) 
+}
+
+function sortStudents(studentMark, array){
+  return array.push(studentMark)
+}
+
+function displayStudentsMark(sortedStudents){
+	for(let i = 0; i < sortedStudents.length; i++){
+        if(i == 0) document.write("<br><br> Хороші студенти: <hr>")
+        else if(i == 1) document.write("<br><br> Середні студенти: <hr>")
+        else if(i == 2) document.write("<br><br> Слабкі студенти: <hr>")
+        for(let j = 0; j < sortedStudents[i].length; j++){
+      	    document.write(` ${j+1}) ${sortedStudents[i][j]}<br>`)
+        }
+    }
+}
+</script>
+</body>
+</html>
