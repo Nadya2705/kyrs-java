@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Sort</title>
+</head>
+
+<style>
+	.student-card img {
+		width: 50px;
+		height: 50px;
+		margin: 0px 10px 0px 10px;
+	}
+    .container{
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+    .student-card {
+        padding: 10px;
+    }
+    .student-card:nth-child(even){
+        background: #eee;
+    }
+    .Purple-list:nth-child(even){
+        background: rgba(160, 32, 240, 0.425)
+    }
+    .Purple-list:nth-child(odd){
+        background: rgba(221, 160, 221, 0.425)
+    }
+
+    .NavajoWhite-list:nth-child(even){
+        background: rgba(255, 222, 173, 0.425)
+    }
+    .NavajoWhite-list:nth-child(odd){
+        background: rgba(205, 179, 139, 0.425)
+    }
+
+    .red-list:nth-child(even){
+        background: rgba(224, 238, 238, 0.425)
+    }
+    .red-list:nth-child(odd){
+        background: rgba(135, 206, 255, 0.425)
+    }
+
+</style>
+
+<body>
+	<h2 class="container">Перевірка успішноті студентів з різних груп:</h2>
+    <h3 class="container">Хороші студенти: 89-100</h3>
+    <h3 class="container">Середні студенти: 65-88</h3>
+    <h3 class="container">Слабкі студенти: 0-64</h3>
+    <br>
+
+    <div class="container">
+    	<ul id="user-list-display"></ul>  
+	</div>
+
+
+<script>
+	var GroupMTM11 = [{
+        categoryId: 1,
+        id: 1,
+        name: "Jylia",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/4_avatar-512.png"
+        },
+        mark: 45,
+        course: "Math analiz",
+    },{ 
+        categoryId: 1,
+        id: 2,
+        name: "Ira",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNy9dINLs_lBRowa23Z4qK-67LCqBZvZhpfQ&usqp=CAU"
+        },
+        mark: 78,
+        course: "Math analiz",
+    },{
+        categoryId: 1,
+        id: 3,
+        name: "Anton",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-512.png"
+        },
+        mark: 87,
+        course: "Math analiz", 
+    },{
+        categoryId: 1,
+        id: 4,
+        name: "Dima",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png"
+        },
+        mark: 90,
+        course: "Math analiz",
+    },{ 
+        categoryId: 1,
+        id: 5,
+        name: "Katya",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/9_avatar-512.png"
+        },
+        mark: 100,
+        course: "Math analiz",
+    },{ 
+        categoryId: 1,
+        id: 6,
+        name: "Vasyl",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/1_avatar-512.png"
+        },
+        mark: 51,
+        course: "Math analiz",
+    }];
+
+    var GroupMTM12 = [{
+        categoryId: 2,
+        id: 1,
+        name: "Jyra",
+        photo: {
+            picURL: "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-512.png"
+        },
+        mark: 67,
+        course: "Topologia",
+    },{
+        categoryId: 2,
+        id: 2,
+        name: "Nadia",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqmaWr2psZLOnm_I46vs7hNqVsXsUPQWe_sQ&usqp=CAU"
+        },
+        mark: 74,
+        course: "Topologia",
+    },{ 
+        categoryId: 2,
+        id: 3,
+        name: "Lesya",
+        photo: {
+            picURL: "https://thumbs.dreamstime.com/b/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-%D0%B7%D0%BD%D0%B0%D0%BA%D0%B0-%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%B8%D1%82%D0%B5-%D1%8F-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE-%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D1%8B-%D1%87%D0%B5-%D0%BE%D0%B2%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%BE%D0%BF-%D0%BE%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-84527747.jpg"
+        },
+        mark: 12,
+        course: "Topologia",
+    },{
+        categoryId: 2,
+        id: 4,
+        name: "Oleg",
+        photo: {
+            picURL: "https://previews.123rf.com/images/inegvin/inegvin1701/inegvin170100081/69882116-user-sign-icon-person-symbol-human-avatar-.jpg"
+        },
+        mark: 68,
+        course: "Topologia",
+    },{
+        categoryId: 2,
+        id: 5,
+        name: "Natalya",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3jHJ07AOHI1gasZzN11b4HwcC3dZuB7usmw&usqp=CAU"
+        },
+        mark: 93,
+        course: "Topologia",
+    },{
+        categoryId: 2,
+        id: 6,
+        name: "Roman",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSm8zJiOmXAPeA6N6ORVJbmrXHQBeKSCI1nRw&usqp=CAU"
+        },
+        mark: 36,
+        course: "Topologia",
+    }];
+    
+    var GroupMTM13 = [{
+        categoryId: 3,
+        id: 1,
+        name: "Oksana",
+        photo: {
+            picURL: "https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png"
+        },
+        mark: 89,
+        course: "Algebra",
+    },{
+        categoryId: 3,
+        id: 2,
+        name: "Maks",
+        photo: {
+            picURL: "https://cdn.iconscout.com/icon/free/png-256/teacher-240-1128987.png"
+        },
+        mark: 44,
+        course: "Algebra",
+    },{ 
+        categoryId: 3,
+        id: 3,
+        name: "Andriy",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQD-0fXdLj4s3iQVN5404cAxqc89i6g2gCb-Q&usqp=CAU"
+        },
+        mark: 55,
+        course: "Algebra",
+    },{
+        categoryId: 3,
+        id: 4,
+        name: "Olena",
+        photo: {
+            picURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShNfoyv2aoknkEtzr73TOFrgTBBjatPYn6-w&usqp=CAU"
+        },
+        mark: 66,
+        course: "Algebra",
+    },{
+        categoryId: 3,
+        id: 5,
+        name: "Sandra",
+        photo: {
+            picURL: "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-woman-7.png"
+        },
+        mark: 88,
+        course: "Algebra",
+    },{
+        categoryId: 3,
+        id: 6,
+        name: "Nazar",
+        photo: {
+            picURL: "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-man-6.png"
+        },
+        mark: 99,
+        course: "Algebra",
+    }];
+			document.write(GroupMTM11)
+			document.write(GroupMTM12)
+			document.write(GroupMTM13)
+
+	var goodPoint = 89;
+	var normPoints = [65, 88];
+
+	initStudentCount(GroupMTM11, GroupMTM12, GroupMTM13);
+
+function initStudentCount(){
+	    
+		var allStudents = GroupMTM11.concat(GroupMTM12, GroupMTM13);
+	    var sortedStudents = findStudentsMark(allStudents);
+	    displayStudentsMark(sortedStudents);
+}
+
+function findStudentsMark(students){
+			var goodStudents=[], normStudents = [], badStudents= [];
+			for(let studentInfo of students){
+		        if(studentInfo.mark >= goodPoint){
+		            sortStudents(studentInfo, goodStudents)  
+		        }else if(studentInfo.mark >= normPoints[0] && studentInfo.mark <= normPoints[1]){
+		            sortStudents(studentInfo, normStudents) 
+		        }else{
+		            sortStudents(studentInfo, badStudents)  
+		        }
+		    }
+		    return [].concat([goodStudents], [normStudents], [badStudents]) 
+}
+
+function sortStudents(studentInfo, array){
+  return array.push(studentInfo)
+}
+
+function displayStudentsMark(sortedStudents){
+    var userLIstDisplay = document.querySelector("#user-list-display");
+	for(let i = 0; i < sortedStudents.length; i++){
+        var rowHeader =  createElement("h1", "user-header", `<br> ${
+            (i == 0)? "Хороші студенти:" :
+            (i == 1)? "Середні студенти:" : "Слабкі студенти:"}`)
+        
+        let classDisplay = (i == 0)? "Purple-list" : (i == 1)? "NavajoWhite-list" : "red-list";
+        userLIstDisplay.appendChild(rowHeader);
+        for(let j = 0; j < sortedStudents[i].length; j++){
+            let currentStudentInfo = sortedStudents[i][j]
+            let innerText = `
+                <div>
+                    ${currentStudentInfo.id} ${currentStudentInfo.name} from list ${currentStudentInfo.categoryId}  
+                    <p><mark>${currentStudentInfo.mark}</mark> <span>${currentStudentInfo.course}</span></p>
+                    <img src="${currentStudentInfo.photo.picURL}">
+                </div>`;
+            
+            let newStudentElement = createElement("li", `student-card ${classDisplay}`, innerText);
+            userLIstDisplay.appendChild(newStudentElement);
+        }
+        
+    }
+}
+function createElement(tag, className, innerText){
+    var newObject = document.createElement(tag);
+    newObject.className = (className)? className : false;
+    newObject.innerHTML = (innerText)? innerText : false;
+
+    return newObject
+}
+</script>
+</body>
+</html>
